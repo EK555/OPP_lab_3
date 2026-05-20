@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinanceTrackerApp.TransactionPage"
+             Title="Операция">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="15">
+
+            <!-- Переключатель типа операции (Доход/Расход) -->
+            <Label Text="Тип операции"
+                   FontSize="16"
+                   FontAttributes="Bold" />
+
+            <Picker x:Name="TypePicker"
+                    Title="Выберите тип"
+                    HeightRequest="40">
+                <Picker.Items>
+                    <x:String>💰 Доход</x:String>
+                    <x:String>💸 Расход</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <!-- Поле для суммы -->
+            <Label Text="Сумма"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0" />
+
+            <Entry x:Name="AmountEntry"
+                   Placeholder="Введите сумму"
+                   Keyboard="Numeric"
+                   FontSize="18" />
+
+            <!-- Поле для категории -->
+            <Label Text="Категория"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0" />
+
+            <Entry x:Name="CategoryEntry"
+                   Placeholder="Например: Еда, Транспорт, Зарплата..."
+                   FontSize="16" />
+
+            <!-- Выбор даты -->
+            <Label Text="Дата"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0" />
+
+            <DatePicker x:Name="DatePicker"
+                        Format="dd.MM.yyyy"
+                        MinimumDate="2020-01-01"
+                        MaximumDate="2030-12-31" />
+
+            <!-- Поле для примечания (опционально) -->
+            <Label Text="Примечание (необязательно)"
+                   FontSize="16"
+                   FontAttributes="Bold"
+                   Margin="0,10,0,0" />
+
+            <Entry x:Name="NoteEntry"
+                   Placeholder="Дополнительная информация..."
+                   FontSize="14" />
+
+            <!-- Кнопка сохранения -->
+            <Button x:Name="SaveButton"
+                    Text="💾 Сохранить"
+                    BackgroundColor="#4CAF50"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HeightRequest="50"
+                    Margin="0,20,0,0"
+                    Clicked="OnSaveClicked" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
